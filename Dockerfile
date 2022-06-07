@@ -6,5 +6,5 @@ RUN mv /vokabel-trainer-* /vokabel-trainer
 FROM --platform=${BUILDPLATFORM} httpd:2.4.53-alpine3.16
 COPY --from=src /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 COPY --from=src /vokabel-trainer /usr/local/apache2/htdocs
-ENTRYPOINT httpd
-CMD -D FOREGROUND
+ENTRYPOINT ["/bin/sh", "-c", "httpd"]
+CMD ["-D", "FOREGROUND"]
