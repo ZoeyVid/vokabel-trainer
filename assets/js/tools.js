@@ -8,6 +8,6 @@ async function loadJSON(path) {
 }
 
 async function title(title) {
-    var config = loadJSON
+    var config = loadJSON("./config.json")
     document.title = String(title) + " - " + String(config.schulname) + " | Vokabeltrainer"
 }
