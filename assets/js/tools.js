@@ -1,14 +1,14 @@
 async function loadJSON(path) {
     try {
-        var request = fetch(String(path))
-        await console.log(request)
-        return (await request).json
+        var request = await fetch(new URL(path))
+        console.log(request)
+        return request.json
     } catch (err) {
         console.error(String(err))
     }
 }
 
 async function title(title) {
-    var config = loadJSON("./config.json")
+    var config = await loadJSON("./config.json")
     document.title = String(title) + " - " + String(config.schulname) + " | Vokabeltrainer"
 }
