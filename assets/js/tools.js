@@ -1,8 +1,6 @@
 async function loadJSON(path) {
     try {
-        var request = await fetch(new URL(path))
-        console.log(request)
-        return request.json
+        fetch(new URL(path)).then(response => {return response.json()})
     } catch (err) {
         console.error(String(err))
     }
