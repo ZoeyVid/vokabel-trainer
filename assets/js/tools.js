@@ -20,7 +20,7 @@ async function loadHTML(path) {
         xobj.open('GET', path, true)
         xobj.onreadystatechange = function () {
             if (xobj.readyState == 4 && xobj.status == "200") {
-                return Resolve(String(xobj.responseText))
+                return resolve(String(xobj.responseText))
             }
         }
         xobj.send(null)
