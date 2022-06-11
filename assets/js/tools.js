@@ -34,5 +34,5 @@ async function setTitle(title) {
 }
 
 async function loadNavbar() {
-    document.getElementsByTagName("body")[0].innerHTML = loadHTML("./assets/html/navbar.html")
+    document.getElementsByTagName("body")[0].innerHTML = await loadHTML("./assets/html/navbar.html")
 }
