@@ -1,3 +1,5 @@
+var sprache
+
 async function loadJSON(path) {
     return new Promise((resolve, reject) => {
         var xobj = new XMLHttpRequest()
@@ -39,15 +41,17 @@ async function loadNavbar() {
     var navbar = await getHTML("./assets/elements/navbar.html")
     var config = await loadJSON("./config.json")
     document.getElementById("navbar").innerHTML = navbar.replace("{{schulname}}", config.schulname)
-    var sprachen = document.getElementById("sprachen")
-    var option1 = document.createElement("option")
-    option1.value = "sprache"
-    option1.text = "Bitte sprache Auswählen"
-    option1.disabled = true
-    option1.selected = true
-    sprachen.appendChild(option1)
+    var sprachenAuswahl = document.getElementById("sprachen")
+    if(!sprache) {
+        var notSelect = document.createElement("option")
+        notSelect.value = "notSelect"
+        notSelect.innerHTML = "Sprache wählen"
+        notSelect.disabled = true
+        notSelect.selected = true
+        sprachenAuswahl.appendChild(notSelect)
+    }
     var option2 = document.createElement("option")
     option2.value = "englisch"
     option2.text = "Englisch"
-    sprachen.appendChild(option2)
+    sprachenAuswahl.appendChild(option2)
 }
