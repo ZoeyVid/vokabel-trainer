@@ -39,4 +39,14 @@ async function loadNavbar() {
     var navbar = await getHTML("./assets/elements/navbar.html")
     var config = await loadJSON("./config.json")
     document.getElementById("navbar").innerHTML = navbar.replace("{{schulname}}", config.schulname)
+    var sprachen = document.getElementById("sprachen")
+    var option1 = document.createElement("option")
+    option1.value = "sprache"
+    option1.text = "Bitte sprache Auswählen"
+    option1.disabled = true
+    sprachen.appendChild(option2)
+    var option2 = document.createElement("option")
+    option2.value = "englisch"
+    option2.text = "Englisch"
+    sprachen.appendChild(option2)
 }
