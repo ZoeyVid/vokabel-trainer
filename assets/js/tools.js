@@ -13,26 +13,29 @@ async function loadJSON(path) {
     })
 }
 
-async function loadHTML(path) {
-    return new Promise((resolve, reject) => {
-        var xobj = new XMLHttpRequest()
-        xobj.overrideMimeType("application/json")
-        xobj.open('GET', path, true)
-        xobj.onreadystatechange = function () {
-            if (xobj.readyState == 4 && xobj.status == "200") {
-                return resolve(String(xobj.responseText))
-            }
-        }
-        xobj.send(null)
-        return undefined
-    })
-}
-
 async function setTitle(title) {
     var config = await loadJSON("./config.json")
     document.title = String(title) + " - " + String(config.schulname) + " | Vokabeltrainer"
 }
 
+//Get content of html file
+async function getHTML(path) {
+    return new Promise((resolve, reject) => {
+        var xobj = new XMLHttpRequest()
+        xobj.overrideMimeType("text/html")
+        xobj.open('GET', path, true)
+        xobj.onreadystatechange = function () {
+            if (xobj.readyState == 4 && xobj.status == "200") {
+                return resolve(xobj.responseText)
+            }
+        }
+        xobj.send(null)
+        return undefined
+    }
+    )
+}
+
 async function loadNavbar() {
-    document.getElementsByTagName("body")[0].innerHTML = await loadHTML("./assets/html/navbar.html")
+    var navbar = await getHTML("./assets/elements/navbar.html")
+    document.getElementById("navbar").innerHTML = navbar
 }
