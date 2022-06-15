@@ -37,5 +37,6 @@ async function getHTML(path) {
 
 async function loadNavbar() {
     var navbar = await getHTML("./assets/elements/navbar.html")
-    document.getElementById("navbar").innerHTML = navbar
+    var config = await loadJSON("./config.json")
+    document.getElementById("navbar").innerHTML = navbar.replace("{{schulname}}", config.schulname)
 }
