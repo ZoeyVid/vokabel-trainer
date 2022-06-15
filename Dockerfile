@@ -14,7 +14,7 @@ RUN rm -rf /vokabel-trainer/.whitesource
 RUN rm -rf /vokabel-trainer/.imgbotconfig
 RUN rm -rf /vokabel-trainer/renovate.json
 
-FROM busybox:1.35.0
+FROM scratch
 COPY --from=src /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 
 COPY --from=src /usr/sbin/thttpd /usr/local/bin/thttpd
