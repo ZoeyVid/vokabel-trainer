@@ -44,7 +44,7 @@ async function loadNavbar() {
     option1.value = "sprache"
     option1.text = "Bitte sprache Auswählen"
     option1.disabled = true
-    sprachen.appendChild(option2)
+    sprachen.appendChild(option1)
     var option2 = document.createElement("option")
     option2.value = "englisch"
     option2.text = "Englisch"
