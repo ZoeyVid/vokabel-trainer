@@ -62,3 +62,10 @@ async function loadNavbar() {
         sprachenAuswahl.appendChild(option)
     }
 }
+
+//Load footer and replace variables from config
+async function loadFooter() {
+    var footer = await getHTML("./assets/elements/footer.html")
+    var config = await loadJSON("./config.json")
+    document.getElementById("footer").innerHTML = footer.replace("{{schulname}}", config.schulname).replace("{{impressum}}", config.impressum).replace("{{mail}}", config.mail).replace("{{datenschutz}}", config.datenschutz)
+}
