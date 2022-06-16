@@ -43,7 +43,6 @@ async function loadNavbar() {
     document.getElementById("navbar").innerHTML = navbar.replace("{{schulname}}", config.schulname)
     var sprachenAuswahl = document.getElementById("sprachen")
     var sprachen = await loadJSON("./sprachen/sprachen.json")
-    console.log(sprachen[0])
     if(!sprache) {
         var notSelect = document.createElement("option")
         notSelect.value = "notSelect"
@@ -57,6 +56,9 @@ async function loadNavbar() {
         var option = document.createElement("option")
         option.value = sprachenOption.path
         option.innerHTML = sprachenOption.name
+        if(sprachenOption.path == sprache) {
+            option.selected = true
+        }
         sprachenAuswahl.appendChild(option)
     }
 }
