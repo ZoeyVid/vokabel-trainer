@@ -1,6 +1,4 @@
 {
-    "example": {
-        "name": "Beispiel",
-        "value": "example"
-    }
+    "name": "Beispiel",
+    "path": "example"
 }

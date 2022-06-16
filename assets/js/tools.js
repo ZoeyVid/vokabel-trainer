@@ -54,7 +54,7 @@ async function loadNavbar() {
     }
     sprachen.forEach(sprachenOption => {
         var option = document.createElement("option")
-        option.value = sprachenOption.value
+        option.value = sprachenOption.path
         option.innerHTML = sprachenOption.name
         sprachenAuswahl.appendChild(option)
     })
