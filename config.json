@@ -1,7 +1,7 @@
 {
-	"schulicon": "",
+	"schulicon": "https://dl.scdmx.de/images/Schule.webp",
 	"schulname": "Beispiel Schule",
-	"impressum": "",
-	"mail": "",
-	"datenschutz": ""
+	"impressum": "https://scdmx.de/imprint",
+	"mail": "vokabel@scdmx.de",
+	"datenschutz": "https://scdmx.de/privacy"
 }
