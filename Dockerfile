@@ -7,7 +7,7 @@ RUN rm -rf /vokabel-trainer/docker-compose.yml
 RUN rm -rf /vokabel-trainer/config.json
 RUN rm -rf /vokabel-trainer/Dockerfile
 RUN rm -rf /vokabel-trainer/sprachen
-RUN rm -rf /vokabel-trainer/LICENSE
+RUN rm -rf /vokabel-trainer/.github
 RUN rm -rf /vokabel-trainer/README.md
 RUN rm -rf /vokabel-trainer/.gitignore
 RUN rm -rf /vokabel-trainer/.whitesource
