@@ -52,10 +52,11 @@ async function loadNavbar() {
         notSelect.selected = true
         sprachenAuswahl.appendChild(notSelect)
     }
-    sprachen.forEach(sprachenOption => {
+    for (var i = 0; i < sprachen.length; i++) {
+        var sprachenOption = sprachen[i]
         var option = document.createElement("option")
         option.value = sprachenOption.path
         option.innerHTML = sprachenOption.name
         sprachenAuswahl.appendChild(option)
-    })
+    }
 }
