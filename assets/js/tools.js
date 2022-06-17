@@ -51,7 +51,7 @@ async function loadFooter() {
 }
 
 async function loadSprachen(element) {
-    var sprachenBig = document.getElementById(element)
+    var sprachenAuswahl = document.getElementById(element)
     var sprachen = await loadJSON("./sprachen/sprachen.json")
     if(!sprache) {
         var notSelect = document.createElement("option")
@@ -66,6 +66,6 @@ async function loadSprachen(element) {
         var option = document.createElement("option")
         option.value = sprachenOption.path
         option.innerHTML = sprachenOption.name
-        sprachenBig.appendChild(option)
+        sprachenAuswahl.appendChild(option)
     }
 }
