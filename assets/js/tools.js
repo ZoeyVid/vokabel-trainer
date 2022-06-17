@@ -42,6 +42,7 @@ function debugVars() {
 }
 
 async function loadNavbar() {
+    debugVars()
     var navbar = await getHTML("./assets/elements/navbar.html")
     var config = await loadJSON("./config.json")
     document.getElementById("navbar").innerHTML = navbar.replace("{{schulname}}", config.schulname)
@@ -56,7 +57,6 @@ async function loadFooter() {
 
 async function loadSprachen(element) {
     var sprachenAuswahl = document.getElementById(element)
-    debugVars()
     var sprachen = await loadJSON("./sprachen/sprachen.json")
     if(!sprache) {
         var notSelect = document.createElement("option")
@@ -78,6 +78,5 @@ async function loadSprachen(element) {
 function selectLanguage(element) {
     var select = document.getElementById(element).value 
     window.location.href = select
-    debugVars()
     sprache = select
 }
