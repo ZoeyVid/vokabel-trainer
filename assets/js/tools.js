@@ -36,7 +36,7 @@ async function getHTML(path) {
 }
 
 function debugVars() {
-    if (typeof sprache == 'undefined') {
+    if (typeof sprache === 'undefined') {
         var sprache
     }
 }
