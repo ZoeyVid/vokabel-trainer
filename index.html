@@ -12,7 +12,7 @@
     <body>
         <header id="navbar"></header>
         <a class="font-bold relativ text-4xl text-center">Bitte wähle eine Sprache aus</a>
-        <select class="select select-bordered select-info w-full max-w-xs" id="sprachenBig">
+        <select class="select select-bordered select-info w-full max-w-xs" id="sprachenBig" onselect="selectLanguage('sprachenBig')">
         </select>
         <script async>loadSprachen("sprachenBig")</script>
         <div id="footer"></div>

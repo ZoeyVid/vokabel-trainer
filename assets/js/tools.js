@@ -69,3 +69,8 @@ async function loadSprachen(element) {
         sprachenAuswahl.appendChild(option)
     }
 }
+
+function selectLanguage(element) {
+    var select = document.getElementById(element).value 
+    window.location.href = select
+}
