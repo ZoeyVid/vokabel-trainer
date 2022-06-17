@@ -14,7 +14,7 @@
         <a class="font-bold relativ text-4xl text-center">Bitte wähle eine Sprache aus</a>
         <select class="select select-bordered select-info w-full max-w-xs" id="sprachenBig">
         </select>
-        <script>
+        <script async>
             var sprachenAuswahl = document.getElementById("sprachenBig")
             var sprachen = await loadJSON("./sprachen/sprachen.json")
             sprache = undefined
