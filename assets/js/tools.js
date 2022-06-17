@@ -35,6 +35,12 @@ async function getHTML(path) {
     )
 }
 
+function debugVars() {
+    if (typeof sprache !== 'undefined') {
+        var sprache
+    }
+}
+
 async function loadNavbar() {
     var navbar = await getHTML("./assets/elements/navbar.html")
     var config = await loadJSON("./config.json")
@@ -50,6 +56,7 @@ async function loadFooter() {
 
 async function loadSprachen(element) {
     var sprachenAuswahl = document.getElementById(element)
+    debugVars()
     var sprachen = await loadJSON("./sprachen/sprachen.json")
     if(!sprache) {
         var notSelect = document.createElement("option")
@@ -71,5 +78,6 @@ async function loadSprachen(element) {
 function selectLanguage(element) {
     var select = document.getElementById(element).value 
     window.location.href = select
-    var sprache = select
+    debugVars()
+    sprache = select
 }
