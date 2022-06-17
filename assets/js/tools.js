@@ -1,5 +1,3 @@
-var sprache
-
 async function loadJSON(path) {
     return new Promise((resolve, reject) => {
         var xobj = new XMLHttpRequest()
@@ -73,4 +71,5 @@ async function loadSprachen(element) {
 function selectLanguage(element) {
     var select = document.getElementById(element).value 
     window.location.href = select
+    var sprache = select
 }
