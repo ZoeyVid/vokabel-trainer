@@ -50,7 +50,7 @@ async function loadFooter() {
     document.getElementById("footer").innerHTML = footer.replace("{{schulname}}", config.schulname).replace("{{impressum}}", config.impressum).replace("{{mail}}", config.mail).replace("{{datenschutz}}", config.datenschutz)
 }
 
-var loadSprachen = async function loadSprachen(element) {
+async function loadSprachen(element) {
     var sprachenAuswahl = document.getElementById(element)
     var sprachen = await loadJSON("./sprachen/sprachen.json")
     if(!sprache) {
