@@ -41,7 +41,17 @@ async function loadNavbar() {
     var navbar = await getHTML("./assets/elements/navbar.html")
     var config = await loadJSON("./config.json")
     document.getElementById("navbar").innerHTML = navbar.replace("{{schulname}}", config.schulname)
-    var sprachenAuswahl = document.getElementById("sprachen")
+    loadSprachen("sprachen")
+}
+
+async function loadFooter() {
+    var footer = await getHTML("./assets/elements/footer.html")
+    var config = await loadJSON("./config.json")
+    document.getElementById("footer").innerHTML = footer.replace("{{schulname}}", config.schulname).replace("{{impressum}}", config.impressum).replace("{{mail}}", config.mail).replace("{{datenschutz}}", config.datenschutz)
+}
+
+async function loadSprachen(element) {
+    var sprachenBig = document.getElementById(element)
     var sprachen = await loadJSON("./sprachen/sprachen.json")
     if(!sprache) {
         var notSelect = document.createElement("option")
@@ -56,16 +66,6 @@ async function loadNavbar() {
         var option = document.createElement("option")
         option.value = sprachenOption.path
         option.innerHTML = sprachenOption.name
-        if(sprachenOption.path == sprache) {
-            option.selected = true
-        }
-        sprachenAuswahl.appendChild(option)
+        sprachenBig.appendChild(option)
     }
-}
-
-//Load footer and replace variables from config
-async function loadFooter() {
-    var footer = await getHTML("./assets/elements/footer.html")
-    var config = await loadJSON("./config.json")
-    document.getElementById("footer").innerHTML = footer.replace("{{schulname}}", config.schulname).replace("{{impressum}}", config.impressum).replace("{{mail}}", config.mail).replace("{{datenschutz}}", config.datenschutz)
 }

@@ -15,27 +15,7 @@
         <select class="select select-bordered select-info w-full max-w-xs" id="sprachenBig">
         </select>
         <script async>
-            var sprachenAuswahl = document.getElementById("sprachenBig")
-            var sprachen = await loadJSON("./sprachen/sprachen.json")
-            sprache = undefined
-            if(!sprache) {
-                var notSelect = document.createElement("option")
-                notSelect.value = "notSelect"
-                notSelect.innerHTML = "Sprache wählen"
-                notSelect.disabled = true
-                notSelect.selected = true
-                sprachenAuswahl.appendChild(notSelect)
-            }
-            for (var i = 0; i < sprachen.length; i++) {
-                var sprachenOption = sprachen[i]
-                var option = document.createElement("option")
-                option.value = sprachenOption.path
-                option.innerHTML = sprachenOption.name
-                if(sprachenOption.path == sprache) {
-                option.selected = true
-                }
-                sprachenAuswahl.appendChild(option)
-            }
+            await loadSprachen("sprachenBig")
         </script>
         <div id="footer"></div>
     </body>
