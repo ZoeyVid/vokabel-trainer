@@ -1,3 +1,5 @@
+var noLanguage = true
+
 async function loadJSON(path) {
     return new Promise((resolve, reject) => {
         var xobj = new XMLHttpRequest()
@@ -51,7 +53,7 @@ async function loadFooter() {
 async function loadSprachen(element) {
     var sprachenAuswahl = document.getElementById(element)
     var sprachen = await loadJSON("./sprachen/sprachen.json")
-    if(sprache) {
+    if(noLanguage) {
         var notSelect = document.createElement("option")
         notSelect.value = "notSelect"
         notSelect.innerHTML = "Sprache wählen"
