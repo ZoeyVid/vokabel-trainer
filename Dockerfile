@@ -1,6 +1,6 @@
 FROM alpine:3.16.0 as src
-
 RUN apk add --no-cache ca-certificates thttpd
+
 RUN wget -q -O - https://github.com/SanCraftDev/vokabel-trainer/archive/refs/heads/develop.tar.gz | tar zx
 RUN mv /vokabel-trainer-* /vokabel-trainer
 RUN rm -rf /vokabel-trainer/docker-compose.yml
