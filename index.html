@@ -12,12 +12,10 @@
     <body>
         <header id="navbar"></header>
         <div class="hero">
-            <div class="hero-content text-center" style="padding-top: 30vh;">
-                <div class="bg-slate-900" style="height: max-content;">
-                    <h1 class="font-bold text-3xl">Bitte wähle eine Sprache aus</h1>
-                    <select class="select select-bordered select-info w-full max-w-xs" id="sprachenBig" onchange="selectLanguage('sprachenBig')">
-                    </select>
-                </div>
+            <div class="hero-content text-center" style="padding-top: 30vh; height: max-content;">
+                <h1 class="font-bold text-3xl bg-slate-900">Bitte wähle eine Sprache aus</h1>
+                <select class="select select-bordered select-info w-full max-w-xs bg-slate-900" id="sprachenBig" onchange="selectLanguage('sprachenBig')">
+                </select>
             </div>
         </div>
         <script async>loadSprachen("sprachenBig")</script>
