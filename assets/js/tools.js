@@ -74,3 +74,5 @@ function selectLanguage(element) {
     var select = document.getElementById(element).value 
     window.location.href = "lektionen.html?" + select
 }
+
+//KOMENTAR
