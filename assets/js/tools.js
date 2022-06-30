@@ -91,5 +91,5 @@ function readURL() {
 }
 
 async function insertLanguageName(div) {
-    document.getElementById(div).innerText = await getLanguageName(language)
+    document.getElementById(div).innerHTML = await getLanguageName(language)
 }
