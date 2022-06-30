@@ -49,6 +49,16 @@ async function loadFooter() {
     document.getElementById("footer").innerHTML = footer.replace("{{schulname}}", config.schulname).replace("{{impressum}}", config.impressum).replace("{{mail}}", config.mail).replace("{{datenschutz}}", config.datenschutz)
 }
 
+async function getLanguageName(path) {
+    var sprachen = await loadJSON("./sprachen/sprachen.json")
+    for (var i = 0; i < sprachen.length; i++) {
+        var sprachenOption = sprachen[i]
+        if(sprachenOption.path == path) {
+            return sprachenOption.name
+        }
+    }
+}
+
 async function loadSprachen(element) {
     var sprachenAuswahl = document.getElementById(element)
     var sprachen = await loadJSON("./sprachen/sprachen.json")
@@ -72,5 +82,14 @@ async function loadSprachen(element) {
 
 function selectLanguage(element) {
     var select = document.getElementById(element).value 
-    window.location.href = "lektionen.html?" + select
+    window.location.href = "lektionen.html?sprache=" + select
+}
+
+function readURL() {
+    const urlParams = new URLSearchParams(window.location.search);
+    language = urlParams.get('sprache')
+}
+
+async function insertLanguageName(div) {
+    document.getElementById(div).innerText = getLanguageName(language)
 }
