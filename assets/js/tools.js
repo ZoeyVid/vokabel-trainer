@@ -100,7 +100,7 @@ async function loadLektionen(div) {
     for (var i = 0; i < lektionen.length; i++) {
         var lektion = lektionen[i]
         var lektionDiv = document.createElement("li")
-        /*lektionDiv.className = "lektion"*/
+        lektionDiv.className = "p-3"
         lektionDiv.innerHTML = `<a href="vokabeln.html?sprache=${language}&lektion=${lektion.path}">${lektion.Name}</a><p>${lektion.Description}</p></li>`
         lektionenDiv.appendChild(lektionDiv)
     }
