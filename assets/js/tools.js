@@ -93,3 +93,15 @@ function readURL() {
 async function insertLanguageName(div) {
     document.getElementById(div).innerHTML = await getLanguageName(language)
 }
+
+async function loadLektionen(div) {
+    var lektionen = await loadJSON("./sprachen/" + language + "/lektionen.json")
+    var lektionenDiv = document.getElementById(div)
+    for (var i = 0; i < lektionen.length; i++) {
+        var lektion = lektionen[i]
+        var lektionDiv = document.createElement("li")
+        /*lektionDiv.className = "lektion"*/
+        lektionDiv.innerHTML = `<a href="vokabeln.html?sprache=${language}&lektion=${lektion.path}">${lektion.Name}</a><p>${lektion.Description}</p></li>`
+        lektionenDiv.appendChild(lektionDiv)
+    }
+}
