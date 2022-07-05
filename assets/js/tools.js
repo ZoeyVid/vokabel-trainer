@@ -107,8 +107,3 @@ async function loadLektionen(div) {
         lektionenDiv.appendChild(lektionDiv)
     }
 }
-
-async function enableSwitchLectionButton() {
-    document.getElementById("lektionSwitch").disabled = false;
-    document.getElementById("lektionSwitch").style.display = "";
-}
