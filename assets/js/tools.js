@@ -110,5 +110,5 @@ async function loadLektionen(div) {
 
 function enableSwitchLectionButton() {
     document.getElementById("lektionSwitch").disabled = false
-    document.getElementById("lektionSwitch").style.display = "block"
+    document.getElementById("lektionSwitch").style.display = ""
 }
