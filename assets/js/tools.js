@@ -108,7 +108,7 @@ async function loadLektionen(div) {
     }
 }
 
-function enableSwitchLectionButton() {
-    document.getElementById("lektionSwitch").disabled = false
-    document.getElementById("lektionSwitch").style.display = ""
+async function enableSwitchLectionButton() {
+    await document.getElementById("lektionSwitch").disabled = false
+    await document.getElementById("lektionSwitch").style.display = ""
 }
