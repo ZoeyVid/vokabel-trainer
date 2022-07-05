@@ -1,4 +1,5 @@
 var language = false
+var lektion = false
 
 async function loadJSON(path) {
     return new Promise((resolve, reject) => {
@@ -88,6 +89,7 @@ function selectLanguage(element) {
 function readURL() {
     const urlParams = new URLSearchParams(window.location.search);
     language = urlParams.get('sprache')
+    lektion = urlParams.get('lektion')
 }
 
 async function insertLanguageName(div) {
@@ -104,4 +106,9 @@ async function loadLektionen(div) {
         lektionDiv.innerHTML = `<a href="vokabeln.html?sprache=${language}&lektion=${lektion.path}" class="underline font-bold">${lektion.Name}</a><p>${lektion.Description}</p></li>`
         lektionenDiv.appendChild(lektionDiv)
     }
+}
+
+function enableSwitchLectionButton() {
+    document.getElementById("lektionSwitch").disabled = false
+    document.getElementById("lektionSwitch").style.display = "block"
 }
