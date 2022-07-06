@@ -129,6 +129,7 @@ async function loadVocabs(div) {
     var vocabsDiv = document.getElementById(div)
     console.log("3")
     console.log(vocabs)
+    console.log(vocabs.length)
     for (var i = 0; i < vocabs.length; i++) {
         console.log("4...")
         var vocab = vocabs[i]
