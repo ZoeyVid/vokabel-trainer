@@ -61,7 +61,7 @@ async function getLanguageName(path) {
 }
 
 async function getLektionName(path) {
-    var lektionen = await loadJSON("./sprachen/" + sprache + "/lektionen.json")
+    var lektionen = await loadJSON("./sprachen/" + language + "/lektionen.json")
     for (var i = 0; i < lektionen.length; i++) {
         var lektionenOption = lektionen[i]
         if(lektionenOption.path == path) {
