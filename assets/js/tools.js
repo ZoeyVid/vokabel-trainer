@@ -123,13 +123,18 @@ async function loadLektionen(div) {
 }
 
 async function loadVocabs(div) {
+    console.log("1")
     var vocabs = await loadJSON("./sprachen/" + language + "/" + lektion + ".json")
+    console.log("2")
     var vocabsDiv = document.getElementById(div)
+    console.log("3")
     for (var i = 0; i < vocabs.length; i++) {
+        console.log("4...")
         var vocab = vocabs[i]
         var vocabDiv = document.createElement("li")
         vocabDiv.className = "p-3"
         vocabDiv.innerHTML = `<a class="underline font-bold">${vocab.german} - ${vocab.vocab}</a><p>${vocabe.phrase} - ${vocabe.note}</p></li>`
         vocabsDiv.appendChild(vocabDiv)
     }
+    console.log("5")
 }
