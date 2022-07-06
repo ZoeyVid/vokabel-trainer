@@ -65,7 +65,7 @@ async function getLektionName(path) {
     for (var i = 0; i < lektionen.length; i++) {
         var lektionenOption = lektionen[i]
         if(lektionenOption.path == path) {
-            return lektionenOption.name
+            return lektionenOption.Name
         }
     }
 }
