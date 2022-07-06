@@ -105,7 +105,7 @@ function readURL() {
 async function insertName(div, type) {
     if(type == "lektion") {
         document.getElementById(div).innerHTML = await getLektionName(lektion)
-    } else if(type == "sprache") {
+    } else if(type == "Sprache") {
         document.getElementById(div).innerHTML = await getLanguageName(language)
     }
 }
