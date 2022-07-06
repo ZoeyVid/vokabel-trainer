@@ -60,6 +60,16 @@ async function getLanguageName(path) {
     }
 }
 
+async function getLektionName(path) {
+    var lektionen = await loadJSON("./sprachen/" + sprache + "/lektionen.json")
+    for (var i = 0; i < lektionen.length; i++) {
+        var lektionenOption = lektionen[i]
+        if(lektionenOption.path == path) {
+            return lektionenOption.name
+        }
+    }
+}
+
 async function loadSprachen(element) {
     var sprachenAuswahl = document.getElementById(element)
     var sprachen = await loadJSON("./sprachen/sprachen.json")
@@ -92,8 +102,12 @@ function readURL() {
     lektion = urlParams.get('lektion')
 }
 
-async function insertLanguageName(div) {
-    document.getElementById(div).innerHTML = await getLanguageName(language)
+async function insertName(div, type) {
+    if(type == "lektion") {
+        document.getElementById(div).innerHTML = await getLektionName(lektion)
+    } else if(type == "sprache") {
+        document.getElementById(div).innerHTML = await getLanguageName(language)
+    }
 }
 
 async function loadLektionen(div) {
@@ -105,5 +119,17 @@ async function loadLektionen(div) {
         lektionDiv.className = "p-3"
         lektionDiv.innerHTML = `<a href="vokabeln.html?sprache=${language}&lektion=${lektion.path}" class="underline font-bold">${lektion.Name}</a><p>${lektion.Description}</p></li>`
         lektionenDiv.appendChild(lektionDiv)
+    }
+}
+
+async function loadVocabs(div) {
+    var vocabs = await loadJSON("./sprachen/" + language + "/" + lektion + ".json")
+    var vocabsDiv = document.getElementById(div)
+    for (var i = 0; i < vocabs.length; i++) {
+        var vocab = vocabs[i]
+        var vocabDiv = document.createElement("li")
+        vocabDiv.className = "p-3"
+        vocabDiv.innerHTML = `<a class="underline font-bold">${vocab.german} - ${vocab.vocab}</a><p>${vocabe.phrase} - ${vocabe.note}</p></li>`
+        vocabsDiv.appendChild(vocabDiv)
     }
 }
