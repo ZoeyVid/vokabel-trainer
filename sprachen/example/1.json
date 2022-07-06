@@ -1,20 +1,20 @@
-{
-		"1": {
-			"german": "",
-			"vocab": "",
-			"note": "",
-			"phrase": ""
-		     },
-		"2": {
-			"german": "",
-			"vocab": "",
-			"note": "",
-			"phrase": ""
-		     },
-		"3": {
-			"german": "",
-			"vocab": "",
-			"note": "",
-			"phrase": ""
-		     }
-}
+[
+	{
+		"german": "",
+		"vocab": "",
+		"note": "",
+		"phrase": ""
+	},
+	{
+		"german": "",
+		"vocab": "",
+		"note": "",
+		"phrase": ""
+	},
+	{
+		"german": "",
+		"vocab": "",
+		"note": "",
+		"phrase": ""
+	}
+]
