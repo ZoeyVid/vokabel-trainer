@@ -43,7 +43,7 @@ async function loadNavbar() {
     document.getElementById("navbar").innerHTML = navbar.replace("{{schulname}}", config.schulname)
     loadSprachen("sprachen")
     //TEMPORARY
-    document.cookie = "cookies=true; expires=Wed, 31 Dec 2025 12:00:00 UTC";
+    document.cookie = "cookies=true; expires=Wed, 31 Dec 2025 12:00:00 UTC; Secure";
 }
 
 async function loadFooter() {
