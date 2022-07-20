@@ -152,6 +152,7 @@ function getCookie(name) {
 }
 
 function cookieRemove() {
+    // Geht nicht
     var cookies = document.cookie.split(";");
     for (var i = 0; i < cookies.length; i++) {
         var cookie = cookies[i];
