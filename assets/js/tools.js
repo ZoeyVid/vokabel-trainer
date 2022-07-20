@@ -43,7 +43,7 @@ async function loadNavbar() {
     document.getElementById("navbar").innerHTML = navbar.replace("{{schulname}}", config.schulname)
     loadSprachen("sprachen")
     //TEMPORARY
-    if(getCookie("cookies") !== true) {
+    if(getCookie("cookies") !== false) {
         document.cookie = "cookies=true; expires=Wed, 31 Dec 2025 12:00:00 UTC; Secure";
     }
 }
@@ -149,4 +149,15 @@ function getCookie(name) {
         if (val.indexOf(cName) === 0) res = val.substring(cName.length);
     })
     return res;
+}
+
+function cookieRemove() {
+    var cookies = document.cookie.split(";");
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        var eqPos = cookie.indexOf("=");
+        var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    }
+    document.cookie = "cookies=false; expires=Wed, 31 Dec 2025 12:00:00 UTC; Secure";
 }
