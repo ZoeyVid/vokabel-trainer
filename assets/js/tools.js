@@ -42,6 +42,8 @@ async function loadNavbar() {
     var config = await loadJSON("./config.json")
     document.getElementById("navbar").innerHTML = navbar.replace("{{schulname}}", config.schulname)
     loadSprachen("sprachen")
+    //TEMPORARY
+    document.cookie = "cookies=true; expires=Wed, 31 Dec 2025 12:00:00 UTC";
 }
 
 async function loadFooter() {
