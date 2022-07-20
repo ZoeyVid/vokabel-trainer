@@ -43,7 +43,9 @@ async function loadNavbar() {
     document.getElementById("navbar").innerHTML = navbar.replace("{{schulname}}", config.schulname)
     loadSprachen("sprachen")
     //TEMPORARY
-    document.cookie = "cookies=true; expires=Wed, 31 Dec 2025 12:00:00 UTC; Secure";
+    if(getCookie("cookies") !== true) {
+        document.cookie = "cookies=true; expires=Wed, 31 Dec 2025 12:00:00 UTC; Secure";
+    }
 }
 
 async function loadFooter() {
@@ -136,4 +138,15 @@ async function loadVocabs(div) {
         vocabDiv.innerHTML = `<a class="underline font-bold">${vocab.german} - ${vocab.vocab}</a><p>${vocab.phrase} - ${vocab.note}</p><input type="checkbox" checked="checked" class="checkbox checkbox-secondary justify-end" /></li>`
         vocabsDiv.appendChild(vocabDiv)
     }
+}
+
+function getCookie(name) {
+    const cName = name + "=";
+    const decoded = decodeURIComponent(document.cookie);
+    const arr = decoded .split('; ');
+    let res;
+    arr.forEach(val => {
+        if (val.indexOf(cName) === 0) res = val.substring(cName.length);
+    })
+    return res;
 }
