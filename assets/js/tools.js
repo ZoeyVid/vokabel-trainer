@@ -163,7 +163,7 @@ function cookieRemove() {
     document.cookie = "cookies=false; expires=Wed, 31 Dec 2025 12:00:00 UTC; Secure";
 }
 
-function getSelectedVocabs() {
+function getSelectedVocabs(type) {
     if(document.getElementById("de").checked||document.getElementById("deen").checked) var de = true
     if(document.getElementById("en").checked||document.getElementById("deen").checked) var en = true
     var vocabs = document.getElementsByClassName("checkbox")
@@ -179,5 +179,10 @@ function getSelectedVocabs() {
             }
         }
     }
-    alert(String(selectedVocabs))
+    if(type == "eingabe") {
+        window.location.href = "eingabe.html?sprache=" + language + "&lektion=" + lektion + "&vocabs=" + selectedVocabs
+    }
+    if(type == "selbst") {
+        window.location.href = "selbst.html?sprache=" + language + "&lektion=" + lektion + "&vocabs=" + selectedVocabs
+    }
 }
