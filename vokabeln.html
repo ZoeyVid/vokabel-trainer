@@ -20,29 +20,29 @@
         <script async>loadVocabs("vokabeln")</script>
         <div class="ml-10 mr-10 mt-6 mb-6 text-lg">
           <h2>In welche Richtung soll abgefragt werden</h2>
-          <div class="form-control">
+            <div class="form-control">
               <label class="label cursor-pointer">
                 <span class="label-text">Von Deutsch auf die Fremdsprache</span> 
-                <input type="radio" name="radio-6" class="radio checked:bg-blue-500"/>
+                <input type="radio" name="radio-6" class="radio checked:bg-blue-500" id="de" />
               </label>
             </div>
             <div class="form-control">
               <label class="label cursor-pointer">
                 <span class="label-text">Von der Fremdsprache auf Deutsch</span> 
-                <input type="radio" name="radio-6" class="radio checked:bg-blue-500"/>
+                <input type="radio" name="radio-6" class="radio checked:bg-blue-500" id="en" />
               </label>
             </div>
             <div class="form-control">
               <label class="label cursor-pointer">
                 <span class="label-text">In beide Richtungen</span> 
-                <input type="radio" name="radio-6" class="radio checked:bg-blue-500" checked />
+                <input type="radio" name="radio-6" class="radio checked:bg-blue-500" id="deen" checked />
               </label>
             </div>
           </div>
           <div class="btn-group" style="display: flex; justify-content: center;">
             <br/>
-            <button class="btn btn-lg">Eingabe Abfrage starten</button>
-            <button class="btn btn-lg">Selbst Abfrage starten</button>
+            <button class="btn btn-lg" onclick="getSelectedVocabs()">Eingabe Abfrage starten</button>
+            <button class="btn btn-lg" onclick="getSelectedVocabs()">Selbst Abfrage starten</button>
           </div>
         <div id="footer"></div>
     </body>

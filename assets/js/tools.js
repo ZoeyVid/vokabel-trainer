@@ -162,3 +162,22 @@ function cookieRemove() {
     }
     document.cookie = "cookies=false; expires=Wed, 31 Dec 2025 12:00:00 UTC; Secure";
 }
+
+function getSelectedVocabs() {
+    if(document.getElementById("de").checked||document.getElementById("deen").checked) var de = true
+    if(document.getElementById("en").checked||document.getElementById("deen").checked) var en = true
+    var vocabs = document.getElementsByClassName("checkbox")
+    var selectedVocabs = []
+    for (var i = 0; i < vocabs.length; i++) {
+        var vocab = vocabs[i]
+        if(vocab.checked) {
+            if(de) {
+                selectedVocabs.push(vocab.id.replace("vocab_", "")+"_de")
+            }
+            if(en) {
+                selectedVocabs.push(vocab.id.replace("vocab_", "")+"_en")
+            }
+        }
+    }
+    alert(String(selectedVocabs))
+}
