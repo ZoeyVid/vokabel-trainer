@@ -135,7 +135,7 @@ async function loadVocabs(div) {
         var vocab = vocabs[i]
         var vocabDiv = document.createElement("li")
         vocabDiv.className = "p-3"
-        vocabDiv.innerHTML = `<a class="font-bold">${vocab.german} - ${vocab.vocab}</a><p>${vocab.phrase} - ${vocab.note}</p><input type="checkbox" checked="checked" class="checkbox checkbox-secondary justify-end" /></li>`
+        vocabDiv.innerHTML = `<a class="font-bold">${vocab.german} - ${vocab.vocab}</a><p>${vocab.phrase} - ${vocab.note}</p><input type="checkbox" checked="checked" class="checkbox checkbox-secondary justify-end" id="vocab_${vocab.id}" /></li>`
         vocabsDiv.appendChild(vocabDiv)
     }
 }

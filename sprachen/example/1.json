@@ -1,17 +1,20 @@
 [
 	{
+		"id": "1",
 		"german": "Hallo",
 		"vocab": "Hello",
 		"note": "Servus",
 		"phrase": "..."
 	},
 	{
+		"id": "2",
 		"german": "Apfelkuchen",
 		"vocab": "Applecake",
 		"note": "LECKER",
 		"phrase": "..."
 	},
 	{
+		"id": "3",
 		"german": "Igel",
 		"vocab": "Hedgehog",
 		"note": "Aua",
