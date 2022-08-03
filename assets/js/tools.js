@@ -182,10 +182,10 @@ function getSelectedVocabs(type) {
     }
     if(type == "selbst") {
         window.location.href = "selbst.html?sprache=" + language + "&lektion=" + lektion + "&vokabeln=" + selectedVocabs
-        document.cookie = "vocabs=" + selectedVocabs + "; expires=Wed, 31 Dec 2025 12:00:00 UTC; Secure";
+        document.cookie = "vocabs=" + JSON.parse(selectedVocabs) + "; expires=Wed, 31 Dec 2025 12:00:00 UTC; Secure";
     }
 }
 
 async function test() {
-    console.log(await getCookie(vocabs))
+    console.log(await JSON.parse(getCookie(vocabs)))
 }
