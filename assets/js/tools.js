@@ -177,7 +177,7 @@ function getSelectedVocabs(type) {
             }
         }
     }
-    document.cookie = "vocabs=" + JSON.parse(selectedVocabs) + "; expires=Wed, 31 Dec 2025 12:00:00 UTC; Secure";
+    document.cookie = "vocabs=" + selectedVocabs + "; expires=Wed, 31 Dec 2025 12:00:00 UTC; Secure";
     if(type == "eingabe") {
         window.location.href = "eingabe.html?sprache=" + language + "&lektion=" + lektion + "&vokabeln=" + selectedVocabs
     }
