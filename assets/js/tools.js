@@ -191,5 +191,5 @@ function getSelectedVocabs(type) {
 
 async function test() {
     readURL()
-    console.log(await JSON(vocabs))
+    console.log(JSON(await vocabs))
 }
