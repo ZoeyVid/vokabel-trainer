@@ -1,5 +1,6 @@
 var language = false
 var lektion = false
+var vocabs = false
 
 async function loadJSON(path) {
     return new Promise((resolve, reject) => {
@@ -104,6 +105,7 @@ function readURL() {
     const urlParams = new URLSearchParams(window.location.search);
     language = urlParams.get('sprache')
     lektion = urlParams.get('lektion')
+    vocabs = urlParams.get('vokabeln')
 }
 
 async function insertName(div, type) {
@@ -180,9 +182,13 @@ function getSelectedVocabs(type) {
         }
     }
     if(type == "eingabe") {
-        window.location.href = "eingabe.html?sprache=" + language + "&lektion=" + lektion + "&vocabs=" + selectedVocabs
+        window.location.href = "eingabe.html?sprache=" + language + "&lektion=" + lektion + "&vokabeln=" + selectedVocabs
     }
     if(type == "selbst") {
-        window.location.href = "selbst.html?sprache=" + language + "&lektion=" + lektion + "&vocabs=" + selectedVocabs
+        window.location.href = "selbst.html?sprache=" + language + "&lektion=" + lektion + "&vokabeln=" + selectedVocabs
     }
+}
+
+function test() {
+    console.log(vocabs)
 }
