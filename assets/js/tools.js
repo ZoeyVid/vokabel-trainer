@@ -43,10 +43,6 @@ async function loadNavbar() {
     var config = await loadJSON("./config.json")
     document.getElementById("navbar").innerHTML = navbar.replace("{{schulname}}", config.schulname)
     loadSprachen("sprachen")
-    //TEMPORARY
-    if(getCookie("cookies") !== false) {
-        document.cookie = "cookies=true; expires=Wed, 31 Dec 2025 12:00:00 UTC; Secure";
-    }
 }
 
 async function loadFooter() {
@@ -186,10 +182,10 @@ function getSelectedVocabs(type) {
     }
     if(type == "selbst") {
         window.location.href = "selbst.html?sprache=" + language + "&lektion=" + lektion + "&vokabeln=" + selectedVocabs
+        document.cookie = "vocabs=" + selectedVocabs + "; expires=Wed, 31 Dec 2025 12:00:00 UTC; Secure";
     }
 }
 
 async function test() {
-    readURL()
-    console.log(JSON.parse(await vocabs))
+    console.log(await getCookie(vocabs))
 }
