@@ -189,6 +189,6 @@ function getSelectedVocabs(type) {
     }
 }
 
-function test() {
-    console.log(vocabs)
+async function test() {
+    console.log(await vocabs)
 }
