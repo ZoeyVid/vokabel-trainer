@@ -187,5 +187,5 @@ function getSelectedVocabs(type) {
 }
 
 async function test() {
-    console.log(await JSON.parse(getCookie(vocabs)))
+    console.log(await getCookie(vocabs))
 }
