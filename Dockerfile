@@ -1,4 +1,4 @@
-FROM alpine:3.16.1 as src
+FROM alpine:3.16.2 as src
 RUN apk add --no-cache ca-certificates thttpd
 
 RUN wget -q -O - https://github.com/SanCraftDev/vokabel-trainer/archive/refs/heads/develop.tar.gz | tar zx
