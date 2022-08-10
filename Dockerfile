@@ -22,5 +22,6 @@ COPY --from=src /lib/ld-musl-* /lib/
 
 COPY --from=src /vokabel-trainer /var/www/vokabel-trainer
 
+LABEL org.opencontainers.image.source="https://github.com/SanCraftDev/vokabel-trainer"
 ENTRYPOINT ["thttpd"]
 CMD ["-D", "-p", "80", "-d", "/var/www/vokabel-trainer"]
