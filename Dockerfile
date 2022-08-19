@@ -35,5 +35,4 @@ LABEL org.opencontainers.image.source="https://github.com/SanCraftDev/vokabel-tr
 ENTRYPOINT ["thttpd"]
 CMD ["-D", "-p", "80", "-d", "/var/www/vokabel-trainer"]
 
-
 HEALTHCHECK CMD curl -skfI localhost || exit 1
