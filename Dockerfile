@@ -1,4 +1,5 @@
 FROM alpine:20221110
+RUN apk upgrade --no-cache
 RUN apk add --no-cache ca-certificates thttpd curl
 
 RUN wget -q -O - https://github.com/SanCraftDev/vokabel-trainer/archive/refs/heads/develop.tar.gz | tar zx
