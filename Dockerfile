@@ -13,4 +13,4 @@ LABEL org.opencontainers.image.source="https://github.com/SanCraftDev/vokabel-tr
 ENTRYPOINT ["thttpd"]
 CMD ["-D", "-p", "80", "-d", "/var/www/vokabel-trainer"]
 
-HEALTHCHECK CMD wget -q localhost -O /dev/null || exit 1
+HEALTHCHECK CMD wget -q --no-check-certificate localhost -O /dev/null || exit 1
