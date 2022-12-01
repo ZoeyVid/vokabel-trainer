@@ -8,7 +8,7 @@ version: "3"
 services:
   vokabel-trainer:
     container_name: vokabel-trainer
-    image: zoeyvid/vokabel-trainer:latest
+    image: zoeyvid/vokabel-trainer
     restart: always
     ports:
        - 127.0.0.1:8456:80
