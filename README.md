@@ -1,4 +1,4 @@
-# vokabel-trainer
+# vokabel-trainer (Zur Zeit pausiert)
 Ein Vokabel Trainer
 
 ## compose.yaml file:
