@@ -1,4 +1,4 @@
-FROM alpine:20221110
+FROM alpine:20230208
 RUN apk upgrade --no-cache && \
     apk add --no-cache ca-certificates wget tzdata thttpd
 ADD https://github.com/ZoeyVid/vokabel-trainer /var/www/vokabel-trainer
