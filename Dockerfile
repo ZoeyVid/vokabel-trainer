@@ -4,4 +4,4 @@ RUN apk upgrade --no-cache && \
 ADD https://github.com/ZoeyVid/vokabel-trainer /var/www/vokabel-trainer
 
 ENTRYPOINT ["thttpd", "-D", "-p", "80", "-d", "/var/www/vokabel-trainer"]
-HEALTHCHECK CMD wget -q http://localhost:80 -O /dev/null || exit 1
+HEALTHCHECK CMD wget -qS http://localhost:80 -O /dev/null || exit 1
